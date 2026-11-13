@@ -336,7 +336,7 @@
 
     });
 
-    // Initial display
+    
     renderLoans();
 
 })();
