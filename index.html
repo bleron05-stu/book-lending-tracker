@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track lent books and their due dates.">
+    <title>Book Lending Tracker</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#top">
+                <span>📚</span>
+                <span>Book<span class="brand-accent">Track</span></span>
+            </a>
+            <p>Keep every borrowed book on your radar.</p>
+        </div>
+    </header>
+
+    <main id="top" class="container">
+
+        <section class="intro">
+            <div>
+                <p class="eyebrow">PERSONAL LIBRARY</p>
+                <h1>Book Lending Tracker</h1>
+                <p class="intro-text">
+                    Track what you've lent, who has it, and when it should come back.
+                </p>
+            </div>
+            <div class="intro-decoration">📖</div>
+        </section>
+
+        <!-- Summary -->
+        <section class="summary-grid">
+            <article class="summary-card">
+                <span class="summary-label">Total loans</span>
+                <strong id="total-loans" class="summary-number">0</strong>
+                <span class="summary-hint">Books currently recorded</span>
+            </article>
+
+            <article class="summary-card overdue-card">
+                <span class="summary-label">Overdue loans</span>
+                <strong id="overdue-loans" class="summary-number">0</strong>
+                <span class="summary-hint">Past their due date</span>
+            </article>
+        </section>
+
+        <!-- Book Form -->
+        <section class="panel form-panel">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">NEW RECORD</p>
+                    <h2>Add a lent book</h2>
+                </div>
+                <span class="heading-icon">＋</span>
+            </div>
+
+            <form id="loan-form" novalidate>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="title">Book title *</label>
+                        <input id="title" name="title"
+                               type="text" placeholder="e.g. The Hobbit" required>
+                        <small class="error-message" id="title-error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="author">Author</label>
+                        <input id="author" name="author"
+                               type="text" placeholder="e.g. J. R. R. Tolkien">
+                        <small class="error-message" id="author-error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="borrower">Borrower *</label>
+                        <input id="borrower" name="borrower"
+                               type="text" placeholder="Who borrowed the book?" required>
+                        <small class="error-message" id="borrower-error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="due-date">Due date *</label>
+                        <input id="due-date" name="dueDate" type="date" required>
+                        <small class="error-message" id="due-date-error"></small>
+                    </div>
+
+                    <div class="field field-full">
+                        <label for="genre">Genre</label>
+                        <select id="genre" name="genre">
+                            <option value="Fiction">Fiction</option>
+                            <option value="Science">Science</option>
+                            <option value="History">History</option>
+                            <option value="Technology">Technology</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <p class="form-note">* Required fields</p>
+                    <button class="primary-button" type="submit">
+                        Add book ＋
+                    </button>
+                </div>
+
+                <p id="form-success" class="success-message"></p>
+
+            </form>
+        </section>
+
+        <!-- Book Table -->
+        <section class="panel table-panel">
+
+            <div class="section-heading table-heading">
+                <div>
+                    <p class="eyebrow">YOUR RECORDS</p>
+                    <h2>Lent books</h2>
+                </div>
+                <span id="record-count" class="record-count">0 records</span>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Borrower</th>
+                            <th>Due date</th>
+                            <th>Genre</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="loans-table-body">
+                        <tr class="empty-row">
+                            <td colspan="7">
+                                <span class="empty-icon">📚</span>
+                                <strong>No lent books yet</strong>
+                                <span>Add your first book using the form above.</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>BookTrack · A simple way to keep books moving.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+/* BOOKTRACK CSS LIBRARY */
+
+:root {
+    --color-ink: #172b4d;
+    --color-muted: #718096;
+    --color-primary: #315fce;
+    --color-primary-dark: #244aa7;
+    --color-bg: #f4f7fc;
+    --color-surface: #ffffff;
+    --color-border: #e4eaf3;
+    --color-danger: #c43d4b;
+    --color-danger-bg: #fff0f1;
+    --color-success: #24784c;
+    --color-success-bg: #eaf8f0;
+    --shadow-card: 0 12px 34px rgba(35, 58, 94, 0.07);
+    --radius-card: 18px;
+    --radius-control: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+.site-header {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+    width: min(1120px, calc(100% - 40px));
+    min-height: 70px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-ink);
+    text-decoration: none;
+    font-size: 1.12rem;
+    font-weight: 800;
+}
+
+.brand-accent {
+    color: var(--color-primary);
+}
+
+.header-inner p {
+    color: var(--color-muted);
+    font-size: 0.88rem;
+}
+
+.container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 42px 0 28px;
+}
+
+.eyebrow {
+    color: var(--color-primary);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+h1 {
+    margin-bottom: 8px;
+    font-size: clamp(1.8rem, 4vw, 2.45rem);
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.22rem;
+}
+
+.intro-text {
+    color: var(--color-muted);
+}
+
+.intro-decoration {
+    font-size: 3.4rem;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.summary-card,
+.panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+}
+
+.summary-card {
+    padding: 20px 23px;
+    display: grid;
+    gap: 3px;
+}
+
+.summary-label {
+    color: var(--color-muted);
+    font-size: 0.88rem;
+}
+
+.summary-number {
+    font-size: 2rem;
+}
+
+.summary-hint {
+    color: var(--color-muted);
+    font-size: 0.78rem;
+}
+
+.overdue-card .summary-number {
+    color: var(--color-danger);
+}
+
+.panel {
+    padding: 25px;
+    margin-bottom: 22px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.heading-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: #edf2ff;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px 20px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.field-full {
+    grid-column: 1 / -1;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+input, select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: var(--color-ink);
+    background: white;
+    border: 1px solid #dce3ee;
+    border-radius: var(--radius-control);
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(49, 95, 206, 0.12);
+}
+
+input[aria-invalid="true"] {
+    border-color: var(--color-danger);
+}
+
+.required {
+    color: var(--color-danger);
+}
+
+.error-message {
+    display: block;
+    min-height: 17px;
+    padding-top: 3px;
+    color: var(--color-danger);
+    font-size: 0.74rem;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 5px;
+}
+
+.form-note {
+    color: var(--color-muted);
+    font-size: 0.78rem;
+}
+
+.primary-button {
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    background: var(--color-primary-dark);
+}
+
+.success-message {
+    color: var(--color-success);
+    font-size: 0.82rem;
+}
+
+.table-heading {
+    margin-bottom: 17px;
+}
+
+.record-count {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #f0f3f9;
+    color: var(--color-muted);
+    font-size: 0.76rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+
+thead {
+    background: #f7f9fd;
+}
+
+th {
+    padding: 12px 13px;
+    color: #65738a;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 14px 13px;
+    border-bottom: 1px solid #edf0f5;
+    font-size: 0.82rem;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: var(--color-success-bg);
+    color: var(--color-success);
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.status.overdue {
+    background: var(--color-danger-bg);
+    color: var(--color-danger);
+}
+
+.delete-button {
+    border: 0;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: var(--color-danger-bg);
+    color: var(--color-danger);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.delete-button:hover {
+    background: #ffe1e4;
+}
+
+.empty-row td {
+    padding: 34px 15px;
+    text-align: center;
+    white-space: normal;
+}
+
+.empty-row td > * {
+    display: block;
+}
+
+.empty-icon {
+    font-size: 1.8rem;
+}
+
+.site-footer {
+    padding: 14px 20px 28px;
+    color: var(--color-muted);
+    text-align: center;
+    font-size: 0.76rem;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 680px) {
+
+    .header-inner,
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .header-inner p {
+        display: none;
+    }
+
+    .intro {
+        padding-top: 32px;
+    }
+
+    .summary-grid {
+        gap: 10px;
+    }
+
+    .summary-card {
+        padding: 16px;
+    }
+
+    .panel {
+        padding: 18px 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .field-full {
+        grid-column: auto;
+    }
+
+    .form-actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .primary-button {
+        width: 100%;
+    }
+}
